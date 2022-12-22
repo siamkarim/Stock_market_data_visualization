@@ -14,11 +14,11 @@ class Stock (models.Model):
     close = models.DecimalField(max_digits = 5,decimal_places = 2)
     volume = models.CharField(max_length=100)
 
-    # class Meta:
-    #     db_table="stockdb"
+    class Meta:
+        db_table="stockdb"
 
-    def __str__(self):
-        return str(self.pk)+ " " + self.date+ " "+ self.trade_code+ " "+ self.high+" "+ self.low+" "+ self.open+" "+ self.close+" "+ self.volume
+    # def __str__(self):
+    #     return str(self.pk)+ " " + self.date+ " "+ self.trade_code+ " "+ self.high+" "+ self.low+" "+ self.open+" "+ self.close+" "+ self.volume
     @classmethod
     def create(cls, **kwargs):
         stock = cls.objects.create(  
