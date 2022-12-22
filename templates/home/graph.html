@@ -1,0 +1,7 @@
+{% extends 'home/base.html' %}
+{% block body_body %}
+    {% if chart %}
+        <img src="data:image/png;base64 ,{{chart|safe}}" alt="data not found">
+
+    {% endif %}
+{% endblock  %}

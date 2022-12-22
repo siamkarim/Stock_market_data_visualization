@@ -1,0 +1,62 @@
+{% extends 'home/base.html' %}
+
+{% block body_body %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Stock Market Data</title>
+</head>
+<body>
+    <center>
+        <h1>Edit and Update Record</h1>
+        <hr>
+        <form  method="POST" action="/update/{{Stock.id}}">
+            {% csrf_token %}
+        <table border="1">
+            <tr>
+                <td>data id</td>
+                <td><input type="text" name="id" value="{{Stock.id}}" readonly> </td>
+            </tr>
+            <tr>
+                <td>date</td>
+                <td><input type="text" name="date" value="{{Stock.date}}"> </td>
+            </tr>
+            <tr>
+                <td>Trade_Code</td>
+                <td><input type="text" name="trade_code" value="{{Stock.trade_code}}"> </td>
+            </tr>
+            <tr>
+                <td>High</td>
+                <td><input type="text"name="high" value="{{Stock.high}}"> </td>
+            </tr>
+            <tr>
+                <td>Low</td>
+                <td><input type="text" name="low" value="{{Stock.low}}"> </td>
+            </tr>
+            <tr>
+                <td>Open</td>
+                <td><input type="text" name="open" value="{{Stock.open}}"> </td>
+            </tr>
+            <tr>
+                <td>Close</td>
+                <td><input type="text" name="close" value="{{Stock.close}}"> </td>
+            </tr>
+            <tr>
+                <td>Volume</td>
+                <td><input type="text" name="volume" value="{{Stock.volume}}"> </td>
+            </tr>
+        </table>
+       
+        <input type="submit" value="Update"/> <a href="{% url 'stock_market:index' %}">Back to Home</a>
+        {% if messages %}
+        {% for record in messages %}
+       <h3 style="color: green;">{{record}}</h3> 
+        {% endfor %}
+        {% endif %}
+    </form>
+    </center>
+</body>
+</html>
+{% endblock  %}
