@@ -12,49 +12,42 @@
     <center>
         <h1>Edit and Update Record</h1>
         <hr>
-        <form  method="POST" action="/update/{{Stock.id}}">
+        <form  method="POST" ">
             {% csrf_token %}
         <table border="1">
-            <tr>
-                <td>data id</td>
-                <td><input type="text" name="id" value="{{Stock.id}}" readonly> </td>
-            </tr>
+           
             <tr>
                 <td>date</td>
-                <td><input type="text" name="date" value="{{Stock.date}}"> </td>
+                <td><input type="text" name="date" > </td>
             </tr>
             <tr>
                 <td>Trade_Code</td>
-                <td><input type="text" name="trade_code" value="{{Stock.trade_code}}"> </td>
+                <td><input type="text" name="trade_code" > </td>
             </tr>
             <tr>
                 <td>High</td>
-                <td><input type="text"name="high" value="{{Stock.high}}"> </td>
+                <td><input type="text"name="high" > </td>
             </tr>
             <tr>
                 <td>Low</td>
-                <td><input type="text" name="low" value="{{Stock.low}}"> </td>
+                <td><input type="text" name="low" > </td>
             </tr>
             <tr>
                 <td>Open</td>
-                <td><input type="text" name="open" value="{{Stock.open}}"> </td>
+                <td><input type="text" name="open" > </td>
             </tr>
             <tr>
                 <td>Close</td>
-                <td><input type="text" name="close" value="{{Stock.close}}"> </td>
+                <td><input type="text" name="close" > </td>
             </tr>
             <tr>
                 <td>Volume</td>
-                <td><input type="text" name="volume" value="{{Stock.volume}}"> </td>
+                <td><input type="text" name="volume" > </td>
             </tr>
         </table>
        
-        <input type="submit" value="Update"/> <a href="{% url 'stock_market:index' %}">Back to Home</a>
-        {% if messages %}
-        {% for record in messages %}
-       <h3 style="color: green;">{{record}}</h3> 
-        {% endfor %}
-        {% endif %}
+        <input type="submit" value="insert" onclick="return alert('Record is successful....!')"/> <a href="{% url 'stock_market:index' %}">Back to Home</a>
+     
     </form>
     </center>
 </body>

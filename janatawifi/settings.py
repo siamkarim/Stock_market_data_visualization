@@ -75,27 +75,27 @@ WSGI_APPLICATION = 'janatawifi.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': str(os.path.join(BASE_DIR, "db.sqlite3"))
-#     }
-# }
 DATABASES = {
-    "default": {
-        "ENGINE": "sql_server.pyodbc",
-        "NAME": "stockdb",
-        "USER": "karim",
-        "PASSWORD": "siam7426",
-        "HOST": "DESKTOP-QU9OGJQ",
-       
-        "OPTIONS": {"driver": "ODBC Driver 17 for SQL Server", 
-                    # "isolation_level":"READ UNCOMMITTED"
-                    # "MARS_Connection":True,
-                    # "driver_supports_utf8":True,
-        },
-    },
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': str(os.path.join(BASE_DIR, "db.sqlite3"))
+    }
 }
+# DATABASES = {
+#     "default": {
+#         "ENGINE": "mssql",
+#         "NAME": "stock_marketdb",
+#         "USER": "karim",
+#         "PASSWORD": "siam7426",
+#         "HOST": "DESKTOP-QU9OGJQ",
+       
+#         "OPTIONS": {"driver": "ODBC Driver 17 for SQL Server", 
+#                     # "isolation_level":"READ UNCOMMITTED"
+#                     # "MARS_Connection":True,
+#                     # "driver_supports_utf8":True,
+#         },
+#     },
+# }
 # import pyodbc
 # driver= '{SQL Server Native Client 11.0}'
 

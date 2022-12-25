@@ -34,7 +34,7 @@
     {% if data %}  
     {% for i in data %}
       <tr>
-        
+     
         <td>{{i.date}}</td>
         <td>{{i.trade_code}}</td>
         <td>{{i.high}}</td>
@@ -42,7 +42,7 @@
         <td>{{i.open}}</td>
         <td>{{i.close}}</td>
         <td>{{i.volume}}</td>
-        <td><a href="/edit/{{i.id}}" >Edit</a> </td>
+        <td><a href="{% url 'stock_market:edit' %}" >Edit</a> </td>
       </tr>
     {% endfor %}
     {% endif %}
